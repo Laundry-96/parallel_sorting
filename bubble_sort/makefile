@@ -1,5 +1,5 @@
-CC ?= gcc
-MPICC ?= mpicc
+CC = gcc
+MPICC = mpicc
 all: mpi omp serial
 
 mpi:
