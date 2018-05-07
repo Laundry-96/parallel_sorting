@@ -11,7 +11,7 @@ int main() {
   for(i = 0; i < size; i++)
     printf("%d ", rand_nums[i]);
 
-  printf("\n");
+  printf("\nAAAAAHH\n");
 
   bubble_sort(rand_nums, size);
 
@@ -23,12 +23,13 @@ int main() {
 }
 
 void bubble_sort(int *data, int size) {
-  int i, j, temp;
-  #pragma omp parallel for
-  for(i = 0; i < size - 1; i++) {
-    
-    for(j = 0; j < size - 1 - i; j++) {
+  int i, j, temp, first;
 
+  for(i = 0; i < size - 1; i++) {
+    first = i % 2;
+
+    #pragma omp parallel for default(none), shared(data, first, size, i), private(temp)
+    for(j = first; j < size - 1; j+=2) {
       if(data[j] > data[j+1]) {
         temp = data[j];
         data[j] = data[j+1];
