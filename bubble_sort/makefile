@@ -9,4 +9,4 @@ omp:
 	$(CC) -o omp_bubble -fopenmp bubble_sort_openmp.c random_gen.c
 
 serial:
-	$(CC) bubble_sort_serial.c random_gen.c
+	$(CC) bubble_sort_serial.c random_gen.c -o serial_bubble
