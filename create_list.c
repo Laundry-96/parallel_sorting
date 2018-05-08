@@ -4,7 +4,7 @@
 
 
 int main(int argc, char **argv){
-  int size = 100;
+  int size = 1228800;
   FILE *listOfElements=fopen("listOfElements.txt", "w");
   int a; 
   // size of list

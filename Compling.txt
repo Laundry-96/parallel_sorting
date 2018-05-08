@@ -1,0 +1,18 @@
+create_list.c
+	gcc -g -Wall -o create_list create_list.c
+	./create_list
+
+merge_serial.c
+	gcc -g -Wall -o merge_serial merge_serial.c
+	./merge_serial
+
+merge_mpi.c
+	mpicc -g -Wall -o merge_mpi merge_mpi.c
+	mpiexec -n <number of processors> ./merge_mpi
+
+merge_openmp
+	gcc -fopenmp -g -Wall -o merge_openmp merge_openmp.c
+	export OMP_SET_NUM_THREADS=<number of threads>
+	export OMP_SET_NESTED=1
+	./merge_openmp
+	
